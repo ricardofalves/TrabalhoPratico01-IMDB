@@ -1,6 +1,8 @@
 package IMDB;
 
-public class Movie {
+import java.io.Serializable;
+
+public class Movie implements Serializable {
 
 	private String color;
 	private String director_name;
