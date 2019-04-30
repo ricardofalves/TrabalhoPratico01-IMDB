@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
 public class InvertedIndex {
 
@@ -18,6 +19,9 @@ public class InvertedIndex {
 		String cvsSplit = ",";
 		Map<String, List<Integer>> invertedList = new HashMap<String, List<Integer>>();
 		int count = 0;
+		HashLinear tab = new HashLinear(113);
+	    
+	    double item;
 
 		try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
 
@@ -42,6 +46,16 @@ public class InvertedIndex {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+	    for (int i=0; i<invertedList.size(); i++){
+		Object[] values = invertedList.keySet().toArray();
+		int value = values[i].hashCode();
+		if (value < 0) 
+			value = value * -1;	
+		tab.insere(value);
+	    }
+	    tab.imprime();
+	    System.out.println("\n");
 
 	}
 
