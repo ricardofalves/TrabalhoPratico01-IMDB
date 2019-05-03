@@ -14,12 +14,12 @@ class Hash {
 
 }
 
-class HashLinear {
+class TabelaHash {
 
 	private Hash[] tab;
 	private int TAM_MAX;
 
-	public HashLinear(int tam) {
+	public TabelaHash(int tam) {
 		tab = new Hash[tam];
 		TAM_MAX = tam;
 		for (int i = 0; i < tam; i++)

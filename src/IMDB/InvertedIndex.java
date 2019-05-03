@@ -19,7 +19,7 @@ public class InvertedIndex {
 		String cvsSplit = ",";
 		Map<String, List<Integer>> invertedList = new HashMap<String, List<Integer>>();
 		int count = 0;
-		HashLinear tab = new HashLinear(113);
+		TabelaHash tab = new TabelaHash(0);
 	    
 	    double item;
 
@@ -46,6 +46,8 @@ public class InvertedIndex {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
+		tab = new TabelaHash(invertedList.size());
 		
 	    for (int i=0; i<invertedList.size(); i++){
 		Object[] values = invertedList.keySet().toArray();
